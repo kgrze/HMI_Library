@@ -1,0 +1,2 @@
+HMI_Library is a package for embedded microcontroller with LCD with touchscreen support. 
+Repository can be compiled under Eclipse CDT. Simply just import the project and "build".
