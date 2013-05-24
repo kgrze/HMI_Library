@@ -119,7 +119,7 @@ typedef struct
 //! Slider type definition
 typedef struct
 {
-	unsigned short Id;
+	unsigned char Id;
 	unsigned short XPos;
 	unsigned short YPos;
 	unsigned char Value;
@@ -167,7 +167,7 @@ typedef struct CheckboxListNode GUI_CHECKBOX_LIST_TYPE;
 //!Led type definition
 typedef struct
 {
-	unsigned short Id;
+	unsigned char Id;
 	unsigned short XPos;
 	unsigned short YPos;
 	bool IsOn;
