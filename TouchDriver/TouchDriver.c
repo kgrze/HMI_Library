@@ -103,20 +103,20 @@ void TouchDriver_Task(void)
 	bool is_touch_detected = FALSE;
 
 	TouchDriver_ConfigureToDetectTouch();
-	is_touch_detected = TouchDriver_DetectTouch();
+	is_touch_detected = !TouchDriver_DetectTouch();
 
 	switch(TouchData.State)
 	{
 		case TOUCH_WAITING_FOR_TOUCH:
 			// Wait for touch event
-			if( is_touch_detected == FALSE)
+			if( is_touch_detected == TRUE)
 			{
 				TouchData.State = TOUCH_DETECT_X;
 			}
 			break;
 
 		case TOUCH_DETECT_X:
-			if( is_touch_detected == FALSE)
+			if( is_touch_detected == TRUE)
 			{
 				Touch1msCnt++;
 				if(Touch1msCnt > TOUCH_FILTER_DEBOUNCE)
@@ -141,7 +141,7 @@ void TouchDriver_Task(void)
 			break;
 
 		case TOUCH_DETECT_Y:
-			if( is_touch_detected == FALSE)
+			if( is_touch_detected == TRUE)
 			{
 				Touch1msCnt++;
 				if(Touch1msCnt > TOUCH_FILTER_DEBOUNCE)
